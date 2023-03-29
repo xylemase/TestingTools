@@ -1,6 +1,6 @@
 # TestingTools
 
-This repository demonstrates my work in writing testing tools.
+This repository demonstrates some of my work in writing testing tools.
 
 ## How to Use
 
@@ -11,6 +11,19 @@ Be sure that you have access to the Internet, and this API, by clicking the
 link. If you see a bright green page titled **Deck of Cards**, then you are
 ready to try this out.
 
+You can either just [read](#peruse_the_code) the code here or try it out in 
+actual [use](#use_the_code).
+
+### Peruse the Code
+
+To read it, go to the links in the table above, and click into the desired 
+area (at present, there's only `Golang/Cards`). Click any file to read the 
+code.
+
+You may also be interested in my [test plan](https://docs.google.com/spreadsheets/d/1TZbfLPdaYk1R5Fl56N6DukIsLcjtKRDLVovpysmGB6k/edit#gid=0), which is also only for golang at the moment.
+
+### Use the Code
+
 You can fork, or clone this repo locally, then descend into the appropriate
 language folder. Run the tests as indicated under the language header in the 
 [Languages](#languages) section.
@@ -18,12 +31,13 @@ language folder. Run the tests as indicated under the language header in the
 ## State of Progress
 
 As of late March 2023, I've just started this repo. It will be a work in
-progress for a little while as I add more languages and testing protocols.
+progress for a little while as I add more tests, languages and testing 
+protocols.
 
 ## Languages
 
 I'm currently demonstrating only **[Golang](#golang)**, using:
-- Golang's own Testing package.
+- Golang's `testing` package.
 - Ginkgo.
 - Gomega.
 
@@ -33,6 +47,8 @@ I hope to eventually (soon) include **[Python](#python)** tests, using:
 - Tavern. 
 
 ### Golang
+
+If you just want to see my code, you can remain in this GitHub repo, and click
 
 1. Ensure that Golang v. 1.20.x (or later) is installed, as I wrote
 these tests with that version.
@@ -79,4 +95,4 @@ It's purely diagnostic, to ensure that a desired error can be caught.
 
 1. Ensure that you are using Python 3.x. These instructions will not work with
 Python 2.x.
-2. (This step and further ones are to be determined, at present).
+2. (This step and further ones are to be determined).
