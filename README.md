@@ -27,7 +27,8 @@ I'm currently demonstrating only **[Golang](#golang)**, using:
 - Ginkgo.
 - Gomega.
 
-I hope to eventually (soon) include **Python** test, using:
+I hope to eventually (soon) include **[Python](#python)** tests, using:
+- Python's `requests` module.
 - Pytest.
 - Tavern. 
 
@@ -42,9 +43,9 @@ Expected result: **`Pass`**.
 
 If you like, you can run with higher verbosity on `go test`: `go test -v`. This
 verbosity setting pertains to the golang test runner. It will show you each 
-test's status, so you can pinpoint where an error occurred. If you include more
-than one `v`, it's not defined, and will trigger a usage message, while failing
-the test.
+test's status, so you can pinpoint where an error occurred. Including more
+than one `v`, is undefined. Doing so will trigger a usage message, while 
+failing the test.
 
 There are also package-level flags (verbosity) -v flag, and another 
 `-meta_test` flag that pertain
@@ -66,12 +67,16 @@ The higher the value, the more information is shared, up to a point. Currently
 the level 3 is the maximum.
 
 Including `-meta_test` will "test the test" by contriving failures in some 
-selectd test conditions. I "unsort" card orderings that should be sorted, and
+selected test conditions. I "unsort" card orderings that should be sorted, and
 sort some that should be unsorted. I also mess up the count of some cards in a
 test condition where they should appear exactly once in the deck. At the time
-this is written, that's an exhaustive list of all I do.
+this is written, that's an exhaustive list of all that I do.
 
-You'll never want to run with `-meta_test` in place during production use. It's
-purely diagnostic, to ensure that a desired error is being caught. 
+You'll **never** want to run with `-meta_test` in place during production use.
+It's purely diagnostic, to ensure that a desired error can be caught. 
 
+### Python
 
+1. Ensure that you are using Python 3.x. These instructions will not work with
+Python 2.x.
+2. (This step and further ones are to be determined, at present).
