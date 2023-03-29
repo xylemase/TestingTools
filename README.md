@@ -1,6 +1,6 @@
-# TestingTools
+# API TestingTools
 
-This repository demonstrates some of my work in writing testing tools.
+This repository demonstrates some of my work in writing API testing tools.
 
 ## How to Use
 
@@ -11,8 +11,8 @@ Be sure that you have access to the Internet, and this API, by clicking the
 link. If you see a bright green page titled **Deck of Cards**, then you are
 ready to try this out.
 
-You can either just [read](#peruse_the_code) the code here or try it out in 
-actual [use](#use_the_code).
+You can either just [read](#peruse-the-code) the code here or try it out in 
+actual [use](#use-the-code).
 
 ### Peruse the Code
 
@@ -20,7 +20,12 @@ To read it, go to the links in the table above, and click into the desired
 area (at present, there's only `Golang/Cards`). Click any file to read the 
 code.
 
-You may also be interested in my [test plan](https://docs.google.com/spreadsheets/d/1TZbfLPdaYk1R5Fl56N6DukIsLcjtKRDLVovpysmGB6k/edit#gid=0), which is also only for golang at the moment.
+To return to this page, click the "TestingTools" linked node in any slash ("/")
+delimited range of nodes (a.k.a: breadcrumb).
+
+You may also be interested in my [test plan](https://docs.google.com/spreadsheets/d/1TZbfLPdaYk1R5Fl56N6DukIsLcjtKRDLVovpysmGB6k/edit#gid=0), which is:
+- Only for golang at the moment.
+- A work in progress.
 
 ### Use the Code
 
@@ -49,15 +54,31 @@ I hope to eventually (soon) include **[Python](#python)** tests, using:
 ### Golang
 
 If you just want to see my code, you can remain in this GitHub repo, and click
+on "Golang/Cards" in the file navigation table near the top of this page.
+
+Click "into" any file listed there:
+- `deck_test.go` contains the API functions, each with a corresponding 
+"Test..." function to drive the API function and test for the responses. 
+- `golangcards.go` contains Ginkgo and Gomega handlers, and tests for the 
+responses' status code and and body.
+
+To return to this page, click the "TestingTools" node/link in any slash ("/")
+delimited range of nodes (a.k.a: a breadcrumb).
+
+To use my code:
 
 1. Ensure that Golang v. 1.20.x (or later) is installed, as I wrote
 these tests with that version.
-2. In your local repo of TestingTools, descend into the `Golang` folder, then 
+2. Ensure that you have Git or GitDesktop installed. 
+3. Clone or fork this repository. 
+4. In your local repo of TestingTools, descend into the `Golang` folder, then 
 into the `Cards` subfolder.
-3. In the `Cards` folder, run `go test`. 
+5.
+this, you may see some requests from Go to init the directory. 
 Expected result: **`Pass`**.
 
-If you like, you can run with higher verbosity on `go test`: `go test -v`. This
+If you like, you can run with higher verbosity on `go test`, using `go test -v`
+. This
 verbosity setting pertains to the golang test runner. It will show you each 
 test's status, so you can pinpoint where an error occurred. Including more
 than one `v`, is undefined. Doing so will trigger a usage message, while 
