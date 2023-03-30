@@ -71,14 +71,17 @@ To use my code:
 these tests with that version.
 2. Ensure that you have Git or Git Desktop installed. 
 3. Clone or fork this repository:
+
     a. In a terminal window (Bash, KSH, DOS, etc.), do a `cd` to the parent 
        directory of your Github directories. It's something you will have
        chosen the name of, but it's often named `Git` or something similar.
     b. Copy the url of this page from the browser location bar.
+
     c. In the terminal, in your Git parent directory, start the command by
        typing `git clone ` then paste this repository's URL. You should
        end up with something like: 
         `git clone https://github.com/xylemase/TestingTools`
+
     d. Execute the command by hitting the `Enter` key.
        Expected result: You should see Git making a directory that is the local
        repository (repo). 
@@ -89,15 +92,20 @@ into the `Cards` subfolder. You can do it in one command:
 to initialize the directory and download the 
 Ginkgo and Gomega packages. 
 In my experience, this means that you should:
+
     a. `cd` up to the top-level git-managed directory, "TestingTools": 
         `cd ../..`.
+
     b. invoke `go mod init example.com` on the go test directory, like this:
         `go mod init example.com/Golang/Cards`
+
     c. Then invoke `go mod tidy`. This will download `gomega` and `ginkgo`.
 
-6. Re-enter the go test folderL
+6. Re-enter the go test folder:
+
    `cd Golang/Cards`
 7. Run the test:
+
    `go test`
     
     Expected result: **`Pass`**.
