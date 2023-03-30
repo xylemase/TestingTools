@@ -16,16 +16,16 @@ actual [use](#use-the-code).
 
 ### Peruse the Code
 
-To read it, go to the links in the table above, and click into the desired 
-area (at present, there's only `Golang/Cards`). Click any file to read the 
-code.
+To read the code, go to the links in the table above, and click into the 
+desired area (at present, there's only `Golang/Cards`). Click any file to read
+the code.
 
 To return to this page, click the "TestingTools" linked node in any slash ("/")
 delimited range of nodes (a.k.a: breadcrumb).
 
 You may also be interested in my [test plan](https://docs.google.com/spreadsheets/d/1TZbfLPdaYk1R5Fl56N6DukIsLcjtKRDLVovpysmGB6k/edit#gid=0), which is:
-- Only for golang at the moment.
 - A work in progress.
+- Only for golang at the moment.
 
 ### Use the Code
 
@@ -70,7 +70,7 @@ To use my code:
 1. Ensure that you've installed Golang v. 1.20.x (or later), as I wrote
 these tests with that version.
 2. Ensure that you have Git or Git Desktop installed. 
-3. Clone or fork this repository:
+3. Clone this repository:
 
     a. In a terminal window (Bash, KSH, DOS, etc.), do a `cd` to the parent 
        directory of your Github directories. It's something you will have
@@ -86,7 +86,7 @@ these tests with that version.
     d. Execute the command by hitting the `Enter` key.
 
        Expected result: You should see Git making a directory that is the local
-       repository (repo). 
+    repository (repo). 
 4. CD into your local repo of TestingTools, then descend into the `Golang` 
 folder, then into the `Cards` subfolder. You can do it in one command:
     `cd TestingTools/Golang/Cards`.
@@ -95,13 +95,13 @@ series of messages from Go to initialize the directory and download the Ginkgo
 and Gomega packages. The messages may not be perfectly clear, but in my  
 experience, you should:
 
-    a. `cd` up to the top-level git-managed directory, "TestingTools": 
+    a. Do a `cd` up to the top-level git-managed directory, "TestingTools": 
         `cd ../..`.
 
-    b. invoke `go mod init example.com` on the go test directory, like this:
+    b. Invoke `go mod init example.com` on the go test directory, like this:
         `go mod init example.com/Golang/Cards`
 
-    c. Then invoke `go mod tidy`. This will download `gomega` and `ginkgo`.
+    c. Invoke `go mod tidy`. This will download `gomega` and `ginkgo`.
 
 6. Re-enter the go test folder:
 
