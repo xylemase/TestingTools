@@ -85,7 +85,7 @@ these tests with that version.
 
     d. Execute the command by hitting the `Enter` key.
 
-       Expected result: You should see Git making a directory that is the local
+    Expected result: You should see Git making a directory that is the local
     repository (repo). 
 4. CD into your local repo of TestingTools, then descend into the `Golang` 
 folder, then into the `Cards` subfolder. You can do it in one command:
