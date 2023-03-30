@@ -75,6 +75,7 @@ these tests with that version.
     a. In a terminal window (Bash, KSH, DOS, etc.), do a `cd` to the parent 
        directory of your Github directories. It's something you will have
        chosen the name of, but it's often named `Git` or something similar.
+
     b. Copy the url of this page from the browser location bar.
 
     c. In the terminal, in your Git parent directory, start the command by
@@ -83,15 +84,16 @@ these tests with that version.
         `git clone https://github.com/xylemase/TestingTools`
 
     d. Execute the command by hitting the `Enter` key.
+
        Expected result: You should see Git making a directory that is the local
        repository (repo). 
-4. CD into your local repo of TestingTools, then descend into the `Golang` folder, then 
-into the `Cards` subfolder. You can do it in one command:
-    `cd TestingTools/Golang/Cards`
-5. Run `go test`. The first time that you do this, you may see requests from Go
-to initialize the directory and download the 
-Ginkgo and Gomega packages. 
-In my experience, this means that you should:
+4. CD into your local repo of TestingTools, then descend into the `Golang` 
+folder, then into the `Cards` subfolder. You can do it in one command:
+    `cd TestingTools/Golang/Cards`.
+5. Run `go test`. The first time you do this, you will see a messsage, or
+series of messages from Go to initialize the directory and download the Ginkgo
+and Gomega packages. The messages may not be perfectly clear, but in my  
+experience, you should:
 
     a. `cd` up to the top-level git-managed directory, "TestingTools": 
         `cd ../..`.
@@ -103,34 +105,35 @@ In my experience, this means that you should:
 
 6. Re-enter the go test folder:
 
-   `cd Golang/Cards`
+   `cd Golang/Cards`.
 7. Run the test:
 
    `go test`
     
     Expected result: **`Pass`**.
 
-If you like, you can learn more about the tests by run with higher verbosity on
-the tests, using `go test -v`.
+If you like, you can learn more about the tests by running with higher 
+verbosity on the test runner, using `go test -v`.
 
-This verbosity setting pertains only to the golang test runner. It will show 
-you each test's start and end, and status, so you can pinpoint where an error 
-occurred. If you include more than one `v`, the result is undefined. Doing so
-won't cause any great problem, but it will trigger a usage message, while 
-failing the test.
+This verbosity setting pertains only to the golang test runner. It shows
+you each test's start, end, and and the test-by-test status. Using this, you
+can pinpoint where an error occurred, or give test context to other verbosity
+or metatest data. If you include more than one `v`, the result is undefined. 
+Doing so won't cause any great problem, but it will trigger a usage message, 
+while failing the test.
 
-There are package-level flags.
-- (verbosity) -v
+There are also package-level flags that I've provided in the test package
+`golangcards.go`. These are:
+- (verbosity) `-v=1`
 - `-meta_test` 
 
 These flags pertain only to this particular test package. If you 
 invoke either, or both of them,
 you'll want the test-by-test context provided by the first -v, after `test`.
 
-Without that context, you get a jumble of undifferentiated output. So, first
+Without that context, you'll get a jumble of undifferentiated output. So, first
 include the runner `-v` flag, and the runner flag `-args` to introduce the 
-package-level flags. Then provide the
-package flags as desired. Examples:
+package-level flags. Then provide the package flags as desired. Examples:
 
     go test -v -args -v=1 
 
