@@ -7,7 +7,7 @@ This repository demonstrates some of my work in writing API testing tools.
 The API tests I've put here run against a 
 small, public API, just enough to demonstrate a few tests.
 Be sure that you have access to the Internet, and that API, by clicking the
-link:[public cards API](https://deckofcardsapi.com/).
+link: [public cards API](https://deckofcardsapi.com/).
 If you see a bright green page titled **Deck of Cards**, then you are
 ready to try this out.
 
