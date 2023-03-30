@@ -67,29 +67,62 @@ delimited range of nodes (a.k.a: a breadcrumb).
 
 To use my code:
 
-1. Ensure that Golang v. 1.20.x (or later) is installed, as I wrote
+1. Ensure that you've installed Golang v. 1.20.x (or later), as I wrote
 these tests with that version.
-2. Ensure that you have Git or GitDesktop installed. 
-3. Clone or fork this repository. 
-4. In your local repo of TestingTools, descend into the `Golang` folder, then 
-into the `Cards` subfolder.
-5.
-this, you may see some requests from Go to init the directory. 
-Expected result: **`Pass`**.
+2. Ensure that you have Git or Git Desktop installed. 
+3. Clone or fork this repository:
+    a. In a terminal window (Bash, KSH, DOS, etc.), do a `cd` to the parent 
+       directory of your Github directories. It's something you will have
+       chosen the name of, but it's often named `Git` or something similar.
+    b. Copy the url of this page from the browser location bar.
+    c. In the terminal, in your Git parent directory, start the command by
+       typing `git clone ` then paste this repository's URL. You should
+       end up with something like: 
+        `git clone https://github.com/xylemase/TestingTools`
+    d. Execute the command by hitting the `Enter` key.
+       Expected result: You should see Git making a directory that is the local
+       repository (repo). 
+4. CD into your local repo of TestingTools, then descend into the `Golang` folder, then 
+into the `Cards` subfolder. You can do it in one command:
+    `cd TestingTools/Golang/Cards`
+5. Run `go test`. The first time that you do this, you may see requests from Go
+to initialize the directory and download the 
+Ginkgo and Gomega packages. 
+In my experience, this means that you should:
+    a. `cd` up to the top-level git-managed directory, "TestingTools": 
+        `cd ../..`.
+    b. invoke `go mod init example.com` on the go test directory, like this:
+        `go mod init example.com/Golang/Cards`
+    c. Then invoke `go mod tidy`. This will download `gomega` and `ginkgo`.
 
-If you like, you can run with higher verbosity on `go test`, using `go test -v`
-. This
-verbosity setting pertains to the golang test runner. It will show you each 
-test's status, so you can pinpoint where an error occurred. Including more
-than one `v`, is undefined. Doing so will trigger a usage message, while 
+6. Re-enter the go test folderL
+   `cd Golang/Cards`
+7. Run the test:
+   `go test`
+    
+    Expected result: **`Pass`**.
+
+If you like, you can learn more about the tests by run with higher verbosity on
+the tests, using `go test -v`.
+
+This verbosity setting pertains only to the golang test runner. It will show 
+you each test's start and end, and status, so you can pinpoint where an error 
+occurred. If you include more than one `v`, the result is undefined. Doing so
+won't cause any great problem, but it will trigger a usage message, while 
 failing the test.
 
-There are also package-level flags (verbosity) -v flag, and another 
-`-meta_test` flag that pertain
-to this particular test package. If invoke either, or both package-level flags,
-you'll want the test by test context. So, first include the runner flag, then
-the runner flag `-args` to introduce the package-level flags. Then provide the
-package flags as desired. E.g:
+There are package-level flags.
+- (verbosity) -v
+- `-meta_test` 
+
+These flags pertain only to this particular test package. If you 
+invoke either, or both of them,
+you'll want the test-by-test context provided by the first -v, after `test`.
+
+Without that context, you get a jumble of undifferentiated output. So, first
+include the runner `-v` flag, and the runner flag `-args` to introduce the 
+package-level flags. Then provide the
+package flags as desired. Examples:
 
     go test -v -args -v=1 
 
@@ -98,19 +131,21 @@ package flags as desired. E.g:
     go test -v -args -meta_test
 
     go test -v -args -v=1 -meta_test 
-
-As you can see above, the package-level verbosity flag takes an integer value. 
+etc.
+ 
+As you can see above, the package-level verbosity flag (the -v on the right)
+takes an integer value. 
 The higher the value, the more information is shared, up to a point. Currently
 the level 3 is the maximum.
 
 Including `-meta_test` will "test the test" by contriving failures in some 
 selected test conditions. I "unsort" card orderings that should be sorted, and
 sort some that should be unsorted. I also mess up the count of some cards in a
-test condition where they should appear exactly once in the deck. At the time
+test condition, where they should appear exactly once in the deck. At the time
 this is written, that's an exhaustive list of all that I do.
 
 You'll **never** want to run with `-meta_test` in place during production use.
-It's purely diagnostic, to ensure that a desired error can be caught. 
+It's purely diagnostic, just to ensure that a desired error can be caught. 
 
 ### Python
 
