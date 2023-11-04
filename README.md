@@ -158,7 +158,7 @@ test condition, where they should appear exactly once in the deck. At the time
 this is written, that's an exhaustive list of all that I do.
 
 You'll **never** want to run with `-meta_test` in place during production use.
-It's purely diagnostic, just to ensure that a desired error can be caught. 
+It's purely diagnostic, to ensure that a desired error can be caught. 
 
 ### Python
 
