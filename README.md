@@ -49,7 +49,9 @@ I'm currently demonstrating only **[Golang](#golang)**, using:
 I hope to eventually (soon) include **[Python](#python)** tests, using:
 - Python's `requests` module.
 - Pytest.
-- Tavern. 
+- Tavern.
+
+Plans for the future include Ruby, as well as Java, both using Cucumber.
 
 ### Golang
 
